@@ -2,4 +2,4 @@
 title: "Home"
 ---
 
-{{< figure src="media/main.jpeg" title="" >}}
+<img src="media/main.jpeg">

@@ -36,3 +36,7 @@ pygmentsUseClasses = true
 
 [permalinks]
   posts = "/:title/"
+
+[markup.goldmark.renderer]
+  # Allow HTML in Markdown
+  unsafe = true
