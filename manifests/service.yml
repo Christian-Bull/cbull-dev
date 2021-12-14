@@ -11,6 +11,6 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: slack-go
+    app: cbull-dev
   sessionAffinity: None
   type: ClusterIP
