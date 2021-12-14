@@ -24,14 +24,14 @@ pygmentsUseClasses = true
     identifier = "posts"
     name = "blog"
     title = "posts"
-    url = "/posts"
+    url = "/posts/"
     weight = 20
 
   [[menu.main]]
     identifier = "contact"
     name = "contact"
     title = "contact"
-    url = "/contact"
+    url = "/contact/"
     weight = 30
 
 [permalinks]
