@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: cbull-dev
+  name: cbull-dev
+  labels:
+    app: cbull-dev
+spec:
+  selector:
+    matchLabels:
+      app: cbull-dev
+  template:
+    metadata:
+      labels:
+        app: cbull-dev
+    spec:
+      containers:
+      - name: cbull-dev
+        image: csbull55/cbull-dev:develop-latest

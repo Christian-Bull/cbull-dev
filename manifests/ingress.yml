@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cbull-dev
+  namespace: cbull-dev
+  labels:
+    app: cbull-dev
+  annotations:
+    acme.cert-manager.io/http01-ingress-class: external
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+spec:
+  rules:
+    - host: cbull.dev
+      http:
+        paths:
+        - backend:
+            serviceName: cbull-dev
+            servicePort: 80
+  tls:
+    - hosts:
+      - cbull.dev
+      secretName: cbull-dev-acme-certificate
