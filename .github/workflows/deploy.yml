@@ -16,3 +16,15 @@ jobs:
         run: |
           echo "SHA=${GITHUB_SHA}"
           echo "GITHUB_REF_NAME=${GITHUB_REF_NAME}"
+          echo "GITHUB_JOB=${GITHUB_JOB}"
+          
+      - name: Update Image Version in our deployment spec
+        uses: fjogeleit/yaml-update-action@master
+        with:
+          valueFile: 'manifests/deployment.yml'
+          propertyPath: 'spec.template.spec.containers[0].image'
+          value: ${{ env.GITHUB_REF_NAME }}-${{ env.SHA }}
+          branch: main-image-update-{{ env.GITHUB_JOB }}
+          targetBranch: main
+          createPR: true
+          message: 'Update Image Version to ${{ env.GITHUB_REF_NAME }}-${{ env.SHA }}' 
