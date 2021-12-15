@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+      - uat
       - main
     paths-ignore:
       - '**/readme.md'
