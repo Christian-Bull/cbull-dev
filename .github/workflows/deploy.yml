@@ -26,7 +26,7 @@ jobs:
           sed 's/SED_imageName/${{ env.GITHUB_REF_NAME }}-${{ env.SHA }}/g' manifests/.templates/deployment.yml > manifests/deployment.yml
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: EndBug/add-and-commit@v7
         with:
           branch: action-update-manifest
 
