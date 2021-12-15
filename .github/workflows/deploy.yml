@@ -21,13 +21,12 @@ jobs:
           echo "SHA=${GITHUB_SHA}" >> $GITHUB_ENV
           echo "GITHUB_REF_NAME=${GITHUB_REF_NAME}" >> $GITHUB_ENV
           
-      - name: Update Image Version in our deployment spec
-        uses: fjogeleit/yaml-update-action@master
+      - name: update deployment spec
+        run: |
+          sed 's/SED_imageName/${{ env.GITHUB_REF_NAME }}-${{ env.SHA }}/g' manifests/.templates/deployment.yml > manifests/deployment.yml
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
         with:
-          valueFile: 'manifests/deployment.yml'
-          propertyPath: 'spec.template.spec.containers.0.image'
-          value: ${{ env.GITHUB_REF_NAME }}-${{ env.SHA }}
-          branch: main-image-update
-          targetBranch: main
-          createPR: true
-          message: 'Update Image Version to ${{ env.GITHUB_REF_NAME }}-${{ env.SHA }}' 
+          branch: action-update-manifest
+

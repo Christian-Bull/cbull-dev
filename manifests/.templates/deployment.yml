@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: cbull-dev
-          image: main-latest
+          image: SED_imageName
