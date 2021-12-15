@@ -28,5 +28,5 @@ jobs:
       - name: Create Pull Request
         uses: EndBug/add-and-commit@v7
         with:
-          branch: action-update-manifest
+          branch: main
 
