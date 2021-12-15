@@ -8,7 +8,6 @@ on:
       - main
     paths-ignore:
       - '**/readme.md'
-      - '**/manifests/**'
 
 #   allows manual dispatch
   workflow_dispatch:
