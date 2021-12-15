@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: cbull-dev
-          image: main-latest
+          image: main-d2799d47a1e71d8f876fb3720cf8d2e82bf685b2
