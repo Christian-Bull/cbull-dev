@@ -2,4 +2,4 @@
 title: "Home"
 ---
 
-<img src="media/main.jpeg">
+<img src="media/sheep.jpeg">
