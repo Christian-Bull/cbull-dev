@@ -26,7 +26,7 @@ jobs:
         uses: fjogeleit/yaml-update-action@master
         with:
           valueFile: 'manifests/deployment.yml'
-          propertyPath: 'spec.template.spec.containers[0].image'
+          propertyPath: 'spec.template.spec.containers.0.image'
           value: ${{ env.GITHUB_REF_NAME }}-${{ env.SHA }}
           branch: main-image-update-{{ env.GITHUB_JOB }}
           targetBranch: main
