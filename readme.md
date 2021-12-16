@@ -1,4 +1,4 @@
-# cbull.dev
+# [cbull.dev](https://cbull.dev/)
 
 A simple personal site created using [Hugo](https://gohugo.io/) and [Etch](https://github.com/LukasJoswiak/etch). A super quick static site generator written in [Go](https://go.dev/).
 
