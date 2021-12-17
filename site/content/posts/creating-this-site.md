@@ -17,12 +17,13 @@ A rather quick search led me to [Hugo](https://gohugo.io/), an open-source stati
 Following their [quick start guide](https://gohugo.io/getting-started/quick-start/) I was up and running in a matter of minutes. Now I'll skip over the hours I spent testing out themes and say I ended up going with [etch](https://github.com/LukasJoswiak/etch). It fit all my requirements above and seemed to fit my use case. 
 
 While developing, hugo comes with it's own webserver with live reloading enabled.
-```
+{{< highlight html >}}
 ✗ hugo server
-``` 
+{{< /highlight >}}
 
 Hugo uses a simple toml/yaml config file for configurations.
-```
+
+{{< highlight html >}}
 baseURL = 'https://cbull.dev/'
 languageCode = 'en-us'
 title = 'Christian Bull'
@@ -48,7 +49,7 @@ theme = "etch"
 [markup.goldmark.renderer]
   # Allow HTML in Markdown
   unsafe = true
-```
+{{< /highlight >}}
 
 Custom pages go in the root on the content folder. Blog posts get their own file in the posts directory.
 ```
@@ -62,26 +63,26 @@ content
 ```
 
 Outputs the final site to the public folder.
-```
+{{< highlight html >}}
 ✗ hugo --minify
-```
+{{< /highlight >}}
 
 Throw it into a simple docker configuration.
-```
+{{< highlight html >}}
 FROM nginx:alpine
 COPY site/public /usr/share/nginx/html
-```
+{{< /highlight >}}
 
-```
+{{< highlight html >}}
 ✗ docker build -t csbull55/cbull-dev:test .
 ✗ docker images csbull55/cbull-dev:test
 REPOSITORY                    TAG              IMAGE ID       CREATED         SIZE
 csbull55/cbull-dev            test             52c1460df6ba   3 seconds ago   26.1MB
-```
+{{< /highlight >}}
 
 Outputs a tiny ~25MB image. Although I'm sure that could be reduced further but that's not a priority right now.
 
-```
+{{< highlight html >}}
 ✗ docker run -p 8080:80 csbull55/cbull-dev:test
-```
+{{< /highlight >}}
 :)
