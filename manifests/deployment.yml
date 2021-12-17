@@ -6,7 +6,6 @@ metadata:
   labels:
     app: cbull-dev
 spec:
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: cbull-dev
@@ -17,4 +16,4 @@ spec:
     spec:
       containers:
         - name: cbull-dev
-          image: csbull55/cbull-dev:main-155a2ac56b0a68984c7766b2e42298eba0a04ab7
+          image: csbull55/cbull-dev:main-0fe13bce7161fd13b0e532f8e642802c34e672f1
