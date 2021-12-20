@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/Christian-Bull/cbull-dev-infra.git
+          repository: Christian-Bull/cbull-dev-infra
         
       - name: set env vars
         run: |
