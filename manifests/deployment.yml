@@ -6,6 +6,8 @@ metadata:
   labels:
     app: cbull-dev
 spec:
+  replicas: 3
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: cbull-dev
