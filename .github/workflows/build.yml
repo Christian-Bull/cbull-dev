@@ -8,6 +8,9 @@ on:
       - main
     paths-ignore:
       - '**/readme.md'
+      
+  schedule:
+    - cron:  '0 5 * * 1'
 
 #   allows manual dispatch
   workflow_dispatch:
