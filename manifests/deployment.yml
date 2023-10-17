@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: cbull-dev
+  namespace: cbull
   name: cbull-dev
   labels:
     app: cbull-dev

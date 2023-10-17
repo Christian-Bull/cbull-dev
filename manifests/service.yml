@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cbull-dev
-  namespace: cbull-dev
+  namespace: cbull
   labels:
     app: cbull-dev
 spec:
